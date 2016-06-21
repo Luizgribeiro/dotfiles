@@ -1,0 +1,106 @@
+"mapeando tecla leader
+:let mapleader = ";"
+
+"tornando barra de espaço mais util--> folding
+nnoremap <space> za
+
+"numeros relativos no canto
+set relativenumber
+
+"hilight na lina do cursor
+set cursorline
+
+"definindo hilight do cursor
+hi CursorLine term=bold cterm=bold guibg=Grey40
+
+"dfine coluna da numeracao
+set numberwidth=2
+
+"Quebra a linha na palavra e nao no caractere
+set linebreak 
+set autoindent
+
+syntax enable
+
+"remap de atalhos CTRL:
+
+	"remap function save
+    "not recursive 
+	nnoremap <c-s> :w<CR> 
+	"insert mode nao recursivo
+	inoremap <c-s> <Esc>:w<CR>l
+	"visual mode nao recursivo
+	vnoremap <c-s> <Esc>:w<CR>
+
+	"remap save-quit
+	"normal mode 
+	nnoremap <c-q> :wq<CR>
+	"insert mode
+	inoremap <c-q> <Esc>:wq<CR>l
+	"visual mode
+	vnoremap <c-q> <Esc>:wq<CR>
+
+	"remap unsave-quit
+	"normal mode 
+	nnoremap <c-u> :q!<CR>
+	"insert mode
+	inoremap <c-u> <Esc>:q!<CR>l
+	"visual mode
+	vnoremap <c-u> <Esc>:q!<CR>
+
+
+	"remap ctrl z--> undo
+	"normal mode
+	nnoremap <c-z> :u<CR>
+	"insert mode
+	inoremap <c-z> <Esc>:u<CR>l
+	"visual mode
+	vnoremap <c-z> <Esc>:u<CR>
+
+
+"remap de teclas basicas	
+	"remap de setas
+	nnoremap <Down> <nop>
+	nnoremap <Up> <nop>
+	nnoremap <Left> <nop>
+	nnoremap <Right> <nop>
+
+	"remapeando esc
+	inoremap <esc> <nop>
+	inoremap jk <esc>
+
+
+"edicao do vimrc
+	"abrir vimrc
+	nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+	"save vimrc
+	nnoremap <leader>sv :source $MYVIMRC<cr>
+
+"Autocomandos
+    "reindent python
+"    autocmd FileType python :iabbrev <buffer> iff if ():jkhi
+"    autocmd FileType javascript :iabbrev <buffer> iff if ()jkhi
+"   autocmd FileType C :iabbrev <buffer< iff if ()<left> 
+
+"status line
+"after tmux don't need that
+"set statusline=%l
+"set statusline+=/
+"set statusline+=/
+"set statusline+=%L
+
+
+"tabs
+:set tabstop=4
+:set shiftwidth=4
+:set expandtab
+
+"indent
+":set autoindent
+":set cindent
+
+
+"Indent
+    set tabstop=4
+    set shiftwidth=4
+    set expandtab
