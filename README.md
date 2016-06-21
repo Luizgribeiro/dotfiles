@@ -1,1 +1,1 @@
-Just my dot files. Feel do grab anything you like ;)
+Just my dot files. Feel free to grab anything you like ;)
