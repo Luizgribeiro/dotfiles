@@ -1,3 +1,5 @@
+set nocompatible 
+
 "mapeando tecla leader
 let mapleader = ";"
 
@@ -64,6 +66,7 @@ syntax enable
 
 "remap de teclas basicas	
     "arrow remap
+
 	nnoremap <Down> :echo "No down for you!"<CR>
 	vnoremap <Down> :<C-u>echo "No down for you!"<CR>
     inoremap <Down> :<C-o> echo "No down for you!"<CR>
@@ -77,12 +80,11 @@ syntax enable
 	inoremap <Left> :<C-o>echo "No left for you!"<CR>
 
 	nnoremap <Right> :echo "No right for you!"<CR>
-	vnoremap <Right> :<C-u>echo "No right for you!"<CR>
-	inoremap <Right> :<C-o>echo "No right for you!"<CR>
-
-
+	vnoremap <Right> :<esc> echo "No right for you!" v<CR>
+	inoremap <Right> :<C-o>echo "No Right for you!"<CR>
+    
     "esc remap
-	inoremap <esc> <nop>
+	"inoremap <esc> <nop> --> tive que tirar pois atrapalhava com setas em i
 	inoremap jj <esc>
     
 "edicao do vimrc
@@ -94,4 +96,4 @@ syntax enable
 "Indent
     set tabstop=4
     set shiftwidth=4
-    set expandtab
+        set expandtab
