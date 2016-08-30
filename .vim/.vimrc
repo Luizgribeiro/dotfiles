@@ -69,22 +69,22 @@ syntax enable
 
 	nnoremap <Down> :echo "No down for you!"<CR>
 	vnoremap <Down> :<C-u>echo "No down for you!"<CR>
-    inoremap <Down> :<C-o> echo "No down for you!"<CR>
+    inoremap <Down> <nop>
     
-	nnoremap <Up> :echo "No up for you!" <CR>
-	vnoremap <Up> :<C-u>echo "No up for you!" <CR>
-	inoremap <Up> :<C-o>echo "No up for you!" <CR>
+	nnoremap <Up> :echo "No up for you!"<CR>
+	vnoremap <Up> :<C-u>echo "No up for you!"<CR>
+	inoremap <Up> <nop>
     
 	nnoremap <Left> :echo "No left for you!"<CR>
-	vnoremap <Left> :<C-o>echo "No left for you!"<CR>
-	inoremap <Left> :<C-o>echo "No left for you!"<CR>
+	vnoremap <Left> :<C-u>echo "No left for you!"<CR>
+	inoremap <Left> <nop>
 
 	nnoremap <Right> :echo "No right for you!"<CR>
-	vnoremap <Right> :<esc> echo "No right for you!" v<CR>
-	inoremap <Right> :<C-o>echo "No Right for you!"<CR>
-    
+	vnoremap <Right> :<C-u>echo "No right for you!"<CR>
+	inoremap <Right> <nop>
+        
     "esc remap
-	"inoremap <esc> <nop> --> tive que tirar pois atrapalhava com setas em i
+	"inoremap <esc> <nop> --> problem with arrow remap
 	inoremap jj <esc>
     
 "edicao do vimrc
@@ -97,3 +97,48 @@ syntax enable
     set tabstop=4
     set shiftwidth=4
         set expandtab
+
+
+"markdown abbreviations
+
+abbrev hd1 <h1></h1><Esc>5ha
+iabbrev hd2 <h2></h2><Esc>5ha
+iabbrev hd3 <h3></h3><Esc>5ha
+iabbrev bli <br/>
+iabbrev PP <p></p><Esc>4ha 
+iabbrev blt <ul></ul><Esc>4ha
+iabbrev bpt <li></li><Esc>4ha
+iabbrev hlin <hr />
+iabbrev nlis <ol></ol><Esc>4ha
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
