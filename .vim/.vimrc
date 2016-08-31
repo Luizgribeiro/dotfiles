@@ -99,17 +99,17 @@ syntax enable
         set expandtab
 
 
-"markdown abbreviations
+"html abbreviations
 
 abbrev hd1 <h1></h1><Esc>5ha
 iabbrev hd2 <h2></h2><Esc>5ha
 iabbrev hd3 <h3></h3><Esc>5ha
 iabbrev bli <br/>
 iabbrev PP <p></p><Esc>4ha 
-iabbrev blt <ul></ul><Esc>4ha
-iabbrev bpt <li></li><Esc>4ha
+iabbrev blt <ul></ul><Esc>5ha
+iabbrev bpt <li></li><Esc>5ha
 iabbrev hlin <hr />
-iabbrev nlis <ol></ol><Esc>4ha
+iabbrev nlis <ol></ol><Esc>5ha
 
 
 
