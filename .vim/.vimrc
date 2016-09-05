@@ -3,34 +3,33 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"**                PLUGINS & CONFIGS               *""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" " alternatively, pass a path where Vundle should install plugins
-" "call vundle#begin('~/some/path/here')
-"
-" " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'Valloric/YouCompleteMe'
+    Plugin 'VundleVim/Vundle.vim'
 
+    Plugin 'Valloric/YouCompleteMe'
 
-" All of your Plugins must be added before the following line
+    Plugin 'scrooloose/nerdtree'
+
 call vundle#end()            " required
+
+"YouCompleteMe config
 let g:ycm_global_ycm_extra_conf = '.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+
 " filetype plugin indent on    " required
 " " To ignore plugin indent changes, instead use:
 " "filetype plugin on
 
 
-"mapeando tecla leader
-let mapleader = ";"
-
-"tornando barra de espaço mais util--> folding
-nnoremap <space> za
-
-
-"""""""""""""""""""""""""INTERFACE"""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"**                    INTERFACE                   **"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "numeros relativos no canto
     set relativenumber
 
@@ -46,15 +45,25 @@ nnoremap <space> za
 "Quebra a linha na palavra e nao no caractere
     set linebreak 
 
-
-set autoindent
+"Indentação
+    set autoindent
 
 syntax enable
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"**                   MAPEAMENTOS                  **"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"mapeando tecla leader
+    let mapleader = ";"
+
+"tornando barra de espaço mais util--> folding
+    nnoremap <space> za
+
 
 "remap de atalhos CTRL:
 
 	"remap function save
-    "not recursive 
 	nnoremap <c-s> :w<CR> 
 	"insert mode nao recursivo
 	inoremap <c-s> <Esc>:w<CR>l
@@ -86,13 +95,18 @@ syntax enable
 	"visual mode
 	vnoremap <c-z> <Esc>:u<CR>
 
+	"remap ctrl h/j/k/l --> change vim window
+	nnoremap <c-h> <c-w>h 
+	nnoremap <c-j> <c-w>j 
+	nnoremap <c-k> <c-w>k 
+	nnoremap <c-l> <c-w>l 
 
 "remap de teclas basicas	
     "arrow remap
 
 	nnoremap <Down> :echo "No down for you!"<CR>
 	vnoremap <Down> :<C-u>echo "No down for you!"<CR>
-    inoremap <Down> <nop>
+	inoremap <Down> <nop>
     
 	nnoremap <Up> :echo "No up for you!"<CR>
 	vnoremap <Up> :<C-u>echo "No up for you!"<CR>
@@ -107,7 +121,6 @@ syntax enable
 	inoremap <Right> <nop>
         
     "esc remap
-	"inoremap <esc> <nop> --> problem with arrow remap
 	inoremap jj <esc>
     
 "edicao do vimrc
@@ -115,12 +128,6 @@ syntax enable
 	nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 	"save vimrc
 	nnoremap <leader>sv :source $MYVIMRC<cr>
-
-"Indent
-    set tabstop=4
-    set shiftwidth=4
-        set expandtab
-
 
 "html abbreviations
 
