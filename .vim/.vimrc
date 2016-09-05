@@ -1,4 +1,27 @@
-set nocompatible 
+
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" " alternatively, pass a path where Vundle should install plugins
+" "call vundle#begin('~/some/path/here')
+"
+" " let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'Valloric/YouCompleteMe'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+let g:ycm_global_ycm_extra_conf = '.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+" filetype plugin indent on    " required
+" " To ignore plugin indent changes, instead use:
+" "filetype plugin on
+
 
 "mapeando tecla leader
 let mapleader = ";"
@@ -111,15 +134,16 @@ iabbrev bpt <li></li><Esc>5ha
 iabbrev hlin <hr />
 iabbrev nlis <ol></ol><Esc>5ha
 
+"markdown abbreviations
+
+iabbrev esmu \*
+iabbrev esun \_
 
 
 
 
-
-
-
-
-
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 
 
