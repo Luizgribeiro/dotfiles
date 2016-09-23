@@ -11,16 +11,22 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+	
     Plugin 'VundleVim/Vundle.vim'
 
+"	Plugin 'dracula/vim'
     Plugin 'Valloric/YouCompleteMe'
-
+	"Plugin 'dkprice/vim-easygrep'
     Plugin 'scrooloose/nerdtree'
-
+	Plugin 'rdnetto/YCM-Generator'
 call vundle#end()            " required
 
 "YouCompleteMe config
-let g:ycm_global_ycm_extra_conf = '.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+"let g:ycm_global_ycm_extra_conf = '.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+"let g:ycm_autoclose_preview_window_after_insertion = 1
+"let g:ycm_autoclose_preview_window_after_completion = 1
+set completeopt-=preview 
+
 
 " filetype plugin indent on    " required
 " " To ignore plugin indent changes, instead use:
@@ -30,6 +36,9 @@ let g:ycm_global_ycm_extra_conf = '.vim/bundle/YouCompleteMe/third_party/ycmd/cp
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 "**                    INTERFACE                   **"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
+
+syntax enable
+colorscheme darkblue
 "numeros relativos no canto
     set relativenumber
 
@@ -46,9 +55,15 @@ let g:ycm_global_ycm_extra_conf = '.vim/bundle/YouCompleteMe/third_party/ycmd/cp
     set linebreak 
 
 "Indentação
-    set autoindent
+    set tabstop=4
+    set softtabstop=4
+    set shiftwidth=4
+    set noexpandtab
+	set autoindent
+	set smartindent
 
-syntax enable
+"folding
+    set foldmethod=indent 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 "**                   MAPEAMENTOS                  **"
@@ -129,28 +144,26 @@ syntax enable
 	"save vimrc
 	nnoremap <leader>sv :source $MYVIMRC<cr>
 
-"html abbreviations
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"**		    ABBREVIATIONS		   **"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-abbrev hd1 <h1></h1><Esc>5ha
-iabbrev hd2 <h2></h2><Esc>5ha
-iabbrev hd3 <h3></h3><Esc>5ha
-iabbrev bli <br/>
-iabbrev PP <p></p><Esc>4ha 
-iabbrev blt <ul></ul><Esc>5ha
-iabbrev bpt <li></li><Esc>5ha
-iabbrev hlin <hr />
-iabbrev nlis <ol></ol><Esc>5ha
+"html abbreviations
+	iabbrev hd1 <h1></h1><Esc>5ha
+	iabbrev hd2 <h2></h2><Esc>5ha
+	iabbrev hd3 <h3></h3><Esc>5ha
+	iabbrev bli <br/>
+	iabbrev PP <p></p><Esc>4ha 
+	iabbrev blt <ul></ul><Esc>5ha
+	iabbrev bpt <li></li><Esc>5ha
+	iabbrev hlin <hr />
+	iabbrev nlis <ol></ol><Esc>5ha
 
 "markdown abbreviations
-
-iabbrev esmu \*
-iabbrev esun \_
-
+	iabbrev esmu \*
+	iabbrev esun \_
 
 
-
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
 
 
 
